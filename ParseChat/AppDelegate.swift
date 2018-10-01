@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.applicationId = "CodePath-Parse"
             configuration.server = "http://45.79.67.127:1337/parse"
         }))
-        /*
+        
         if let currentUser = PFUser.current() {
             print("Welcome back \(currentUser.username!) 😀")
                 
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let chatViewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController")
             window?.rootViewController = chatViewController
         }
-        */
+ 
         
         return true
     }
