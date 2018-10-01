@@ -2,7 +2,7 @@
 
 **ParseChat** is a Chat app using an [open source Parse](http://parseplatform.org/) backend.
 
-Time spent: **2** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -11,10 +11,10 @@ The following **required** user stories are complete:
 - [X] User can sign up and sign in to the login screen (+1pt)
 - [X] User sees alerts for login exceptions, i.e. "account already exists", "wrong credentials", etc. (+1pt)
 - [X] User can compose and send chat messages (+2pt)
-- [ ] User can view a list of chat messages in chronological order (+2pt)
-- [ ] Automatically Adjust Cell Size to Fit Text (+1pt)
-- [ ] Username of chat author is displayed in each chat message (+2pt)
-- [ ] Persist Logged in User (+1pt)
+- [X] User can view a list of chat messages in chronological order (+2pt)
+- [X] Automatically Adjust Cell Size to Fit Text (+1pt)
+- [X] Username of chat author is displayed in each chat message (+2pt)
+- [X] Persist Logged in User (+1pt)
 
 The following **stretch** user stories are implemented:
 
@@ -37,7 +37,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/W1gAm8w.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/ISR44Ul.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

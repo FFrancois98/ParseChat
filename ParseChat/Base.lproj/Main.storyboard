@@ -71,7 +71,7 @@
         <!--Chat View Controller-->
         <scene sceneID="Lm8-jp-WnL">
             <objects>
-                <viewController id="vfE-se-2ly" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vfE-se-2ly" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="enf-9a-7dv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,22 +96,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="62" id="mdr-HD-CfV" customClass="ChatCell" customModule="ParseChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="62"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="135" id="mdr-HD-CfV" customClass="ChatCell" customModule="ParseChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdr-HD-CfV" id="8Fi-uZ-CkQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-U6-Yj9">
-                                                    <rect key="frame" x="15" y="11" width="345" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="messageLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-U6-Yj9">
+                                                    <rect key="frame" x="8" y="29" width="359" height="105"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="usernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSo-R4-w6c">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="mSo-R4-w6c" secondAttribute="trailing" constant="8" id="68B-qc-e8a"/>
+                                                <constraint firstItem="vbb-U6-Yj9" firstAttribute="leading" secondItem="8Fi-uZ-CkQ" secondAttribute="leading" constant="8" id="6JH-k0-2T5"/>
+                                                <constraint firstAttribute="trailing" secondItem="vbb-U6-Yj9" secondAttribute="trailing" constant="8" id="Jqd-xT-dVq"/>
+                                                <constraint firstItem="vbb-U6-Yj9" firstAttribute="top" secondItem="mSo-R4-w6c" secondAttribute="bottom" id="fBd-1n-SkZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="vbb-U6-Yj9" secondAttribute="bottom" constant="8" id="mRd-dZ-gfE"/>
+                                                <constraint firstItem="mSo-R4-w6c" firstAttribute="leading" secondItem="8Fi-uZ-CkQ" secondAttribute="leading" constant="8" id="p0O-Fr-O9I"/>
+                                                <constraint firstItem="mSo-R4-w6c" firstAttribute="top" secondItem="8Fi-uZ-CkQ" secondAttribute="top" constant="8" id="qFl-uA-BC6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="vbb-U6-Yj9" id="Lyn-B9-Eck"/>
+                                            <outlet property="userLabel" destination="mSo-R4-w6c" id="lXN-Iz-aIw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -122,6 +140,7 @@
                     <navigationItem key="navigationItem" id="9MK-LQ-arN"/>
                     <connections>
                         <outlet property="chatMessageField" destination="7Aj-R8-4tr" id="FiE-oF-1Ty"/>
+                        <outlet property="chatTableView" destination="3tO-Sz-i95" id="BMq-b3-77X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNl-dA-vet" userLabel="First Responder" sceneMemberID="firstResponder"/>
